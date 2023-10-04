@@ -5,6 +5,8 @@ import AllCategory from "../../Root/Components/AllCaterogy/AllCaterogy";
 import News from "../../Root/Components/News/News";
 import Header from "../../Root/Components/Header/Header";
 import LoginWithGoogle from "../../Root/Components/LoginWithGoogle/LoginWithGoogle";
+import FindUs from "../../Root/Components/Find us/FindUs";
+import Qzone from "../../Root/Components/Qzone/Qzone";
 const Home = () => {
     const data = useLoaderData();
     return (
@@ -20,8 +22,11 @@ const Home = () => {
                     <News></News>
                 </div>
 
-                <LoginWithGoogle></LoginWithGoogle>
-
+                <div>
+                    <LoginWithGoogle></LoginWithGoogle>
+                    <FindUs></FindUs>
+                    <Qzone></Qzone>
+                </div>
             </div>
         </div>
     );
