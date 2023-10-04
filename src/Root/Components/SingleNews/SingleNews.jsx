@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 const SingleNews = ({ singleNews }) => {
-    console.log(singleNews)
     const { details, image_url, author, others_info, rating, title, total_view, _id } = singleNews;
     return (
         <div className='my-3'>

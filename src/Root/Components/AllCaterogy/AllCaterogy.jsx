@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 
 const AllCategory = ({ allCategory }) => {
-    console.log(allCategory)
     return (
         <div>
             <h1 className="font-semibold text-xl mb-3">All Category</h1>

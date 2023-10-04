@@ -9,7 +9,6 @@ const News = () => {
             .then(res => res.json())
             .then(data => setNews(data))
     }, [])
-    console.log(news);
     return (
         <div>
             <h1 className="text-xl font-semibold">Dragon News Home</h1>
