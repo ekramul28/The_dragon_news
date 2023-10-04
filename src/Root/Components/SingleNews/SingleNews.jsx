@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 const SingleNews = ({ singleNews }) => {
     console.log(singleNews)
     const { details, image_url, author, others_info, rating, title, total_view, _id } = singleNews;
@@ -13,7 +14,10 @@ const SingleNews = ({ singleNews }) => {
             </div>
             <h1>{title}</h1>
             <img src={image_url} alt="" />
-            <p>{details}</p>
+            {
+                details.length > 200 ? <p>{details.slice(0, 200)}<Link to={`/news/${_id}`} className='text-lg font-semibold text-blue-500'>Read More .....</Link></p>
+                    : <p>{details}</p>
+            }
         </div>
     );
 };

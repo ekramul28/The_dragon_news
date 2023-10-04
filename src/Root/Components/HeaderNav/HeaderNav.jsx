@@ -1,6 +1,14 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const HeaderNav = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const handelBtn = () => {
+        logOut()
+            .then()
+            .catch()
+    }
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -31,8 +39,13 @@ const HeaderNav = () => {
                     </div>
 
                 </div>
-                <Link to="/login"><button className="btn bg-[#403F3F] ml-3 text-white font-semibold ">Login</button></Link>
+                {
+                    user ?
+                        <button onClick={handelBtn} className="btn bg-[#403F3F] ml-3 text-white font-semibold ">LogOut</button>
+                        : <Link to="/login"><button className="btn bg-[#403F3F] ml-3 text-white font-semibold ">Login</button></Link>
 
+
+                }
             </div>
         </div>
     );
