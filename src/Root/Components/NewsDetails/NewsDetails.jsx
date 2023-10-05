@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import Header from "../Header/Header";
 import HeaderNav from "../HeaderNav/HeaderNav";
 import FindUs from "../Find us/FindUs";
@@ -21,8 +21,9 @@ const NewsDetails = () => {
                         <img className="w-full mb-4" src={news.image_url} alt="" />
                         <p className="font-bold text-2xl mb-5">{news.title}</p>
                         <p>{news.details}</p>
-                        <button className="btn bg-[#D72050] border-none text-white rounded-none mt-8">All news in this category</button>
                     </div>
+                    <Link to="/">                        <button className="btn bg-[#D72050] border-none text-white rounded-none mt-8">All news in this category</button>
+                    </Link>
                 </div>
                 <div className="col-span-1">
                     <LoginWithGoogle></LoginWithGoogle>

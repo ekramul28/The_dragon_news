@@ -6,6 +6,7 @@ import Login from "../Root/Components/Login/Login";
 import Register from "../Root/Components/Register/Register";
 import LoginWithGoogle from "../Root/Components/LoginWithGoogle/LoginWithGoogle";
 import NewsDetails from "../Root/Components/NewsDetails/NewsDetails";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/news/:id",
-                element: <NewsDetails></NewsDetails>,
+                element: <PrivateRoute><NewsDetails></NewsDetails></PrivateRoute>,
                 loader: async () => fetch('/public/data/news.json'),
             },
             {
